@@ -4,8 +4,8 @@
   "description": "cli script to download bitstamp data to sql db",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill src/*spec.js",
-    "test-watch": "node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill -w src/*spec.js",
+    "test": "node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill src/**/*.spec.js",
+    "test:watch": "node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill -w src/**/*.spec.js",
     "output_nock": "node_modules/.bin/babel-node ./src/utils/nock_record.js"
   },
   "repository": {
