@@ -1,5 +1,5 @@
 {
-  "name": "bitstamp-data-cli",
+  "name": "bitstamp-streams",
   "version": "0.1.0",
   "description": "cli script to download bitstamp data to sql db",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joliveros/bitstamp-data-cli.git"
+    "url": "git+https://github.com/joliveros/bitstamp-streams.git"
   },
   "keywords": [
     "bitstamp",
@@ -20,9 +20,9 @@
   "author": "joliveros",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/joliveros/bitstamp-data-cli/issues"
+    "url": "https://github.com/joliveros/bitstamp-streams/issues"
   },
-  "homepage": "https://github.com/joliveros/bitstamp-data-cli#readme",
+  "homepage": "https://github.com/joliveros/bitstamp-streams#readme",
   "dependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.17.0",
