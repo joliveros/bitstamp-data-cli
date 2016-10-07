@@ -4,8 +4,14 @@
   "description": "cli script to download bitstamp data to sql db",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill src/**/*.spec.js",
-    "test:watch": "node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill -w src/**/*.spec.js",
+    "clean": "rimraf lib dist",
+    "build": "babel src --out-dir lib",
+    "build:umd": "webpack src/index.js babel-register babel-polyfill dist/chai-stream-es6.js && NODE_ENV=production webpack src/index.js dist/chai-stream-es6.min.js",
+    "lint": "eslint src test",
+    "test": "NODE_ENV=test node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill ./src/**/*spec.js --recursive",
+    "test:watch": "NODE_ENV=test node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill --recursive ./src/**/*spec.js --watch",
+    "test:cov": "node_modules/.bin/babel-node --presets es2015 es2016 stage-0 -- --plugins transform-builtin-extend -- ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha",
+    "prepublish": "npm run lint && npm run test && npm run clean && npm run build && npm run build:umd",
     "output_nock": "node_modules/.bin/babel-node ./src/utils/nock_record.js"
   },
   "repository": {
