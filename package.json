@@ -20,8 +20,8 @@
   },
   "keywords": [
     "bitstamp",
-    "postgres",
-    "sql"
+    "streams",
+    "api"
   ],
   "author": "joliveros",
   "license": "MIT",
