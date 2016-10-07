@@ -14,5 +14,6 @@ export default function OrderBookStream(interval = 100) {
       setInterval(() => readOrderBook, interval)
     }
   };
+  
   return orderBookStream;
 }
