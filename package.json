@@ -1,7 +1,7 @@
 {
   "name": "bitstamp-streams",
   "version": "0.0.2",
-  "description": "cli script to download bitstamp data to sql db",
+  "description": "Stream bitstamp rest api data",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf lib dist",
