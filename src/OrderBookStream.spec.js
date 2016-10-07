@@ -1,9 +1,8 @@
-import chai from 'chai';
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
 import chaiStream from 'chai-stream-es6';
-import OrderBookStream from './OrderBookStream';
 import nock from 'nock';
 import path from 'path';
+import orderBookStream from './OrderBookStream';
 
 // chai assertions for streams
 chai.use(chaiStream);
@@ -13,6 +12,6 @@ chai.use(chaiStream);
 
 describe('OrderBookStream', () => {
   it('should return object with prices function', () => {
-    expect(OrderBookStream()).to.be.a.ReadableStream;
+    expect(orderBookStream()).to.be.a.ReadableStream;
   });
 });
