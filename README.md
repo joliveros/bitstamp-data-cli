@@ -34,7 +34,6 @@ define(function(require, exports, module) {
 ### script tag
 
 ```html
-<script src="chai.js"></script>
 <script src="bitstamp-streams.js"></script>
 ```
 
