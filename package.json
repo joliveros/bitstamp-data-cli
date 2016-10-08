@@ -1,6 +1,6 @@
 {
   "name": "bitstamp-streams",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Stream bitstamp rest api data",
   "main": "index.js",
   "scripts": {
