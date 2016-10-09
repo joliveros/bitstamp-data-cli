@@ -1,26 +1,21 @@
-import Bitstamp from 'bitstamp-ws';
 import { Readable } from 'stream';
+import WebSocket from 'ws';
 
-export default function WsTradeStream() {
+export default function WsTradeStream(instrument = 'XBTUSD') {
   const tradeStream = new Readable();
-  let bitstamp;
 
   const readData = data => tradeStream.push(JSON.stringify(data));
 
   tradeStream._read = () => {
     if (!tradeStream.started) {
       tradeStream.started = true;
-      bitstamp = new Bitstamp({
-        // force encrypted socket session
-        encrypted: false,
 
-        // BTC/USD market:
-        live_trades: true,
-        order_book: false,
-        diff_order_book: false,
+      // wss://www.bitmex.com/realtime?subscribe=instrument,orderBook:XBTZ14
+      const websocket = new WebSocket(`wss://www.bitmex.com/realtime?subscribe=trade:${instrument}`);
+
+      websocket.on('open', () => {
+        websocket.on('message', readData);
       });
-
-      bitstamp.on('trade', readData);
     }
   };
 
