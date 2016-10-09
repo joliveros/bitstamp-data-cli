@@ -1,7 +1,7 @@
-import OrderBookStream from './OrderBookStream';
-import TransactionStream from './TransactionStream';
+import WsOrderBookStream from './WsOrderBookStream';
+import WsTradeStream from './WsTradeStream';
 
 export {
-  OrderBookStream,
-  TransactionStream,
+  WsOrderBookStream,
+  WsTradeStream,
 };
