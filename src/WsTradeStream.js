@@ -4,7 +4,7 @@ import WebSocket from 'ws';
 export default function WsTradeStream(instrument = 'XBTUSD') {
   const tradeStream = new Readable();
 
-  const readData = data => tradeStream.push(JSON.stringify(data));
+  const readData = data => tradeStream.push(data);
 
   tradeStream._read = () => {
     if (!tradeStream.started) {

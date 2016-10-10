@@ -4,7 +4,7 @@ import WebSocket from 'ws';
 export default function WsOrderBookStream(instrument = 'XBTUSD') {
   const orderBookStream = new Readable();
 
-  const readData = data => orderBookStream.push(JSON.stringify(data));
+  const readData = data => orderBookStream.push(data);
 
   orderBookStream._read = () => {
     if (!orderBookStream.started) {
