@@ -1,6 +1,6 @@
 {
   "name": "bitmex-streams",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Stream bitstamp rest api data",
   "main": "lib/index.js",
   "scripts": {
